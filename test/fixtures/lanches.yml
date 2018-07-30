@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  id: 
+  user: one
+  schedule_date: 
+  place: 
+
+two:
+  id: 
+  user: two
+  schedule_date: 
+  place: 
