@@ -6,7 +6,7 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-user = User.create(name: 'amy', email: 'example@example.com', admin: true)
+user = User.create(name: 'amy', admin: true)
 lanch = user.lanches.create(scheduled_at: Date.new(2018,8,1))
 lanch.guests.create(name: 'tom')
 lanch.guests.create(name: 'george')
