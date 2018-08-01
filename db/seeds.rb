@@ -12,6 +12,6 @@ invitee2 = User.create(name: 'george')
 lunch = user.lunches.create(scheduled_at: Date.new(2018, 8, 1),
                             place: 'Asian Parm',
                             state: :scheduled)
-Invitation.create(lunch: lunch, user: invitee)
-Invitation.create(lunch: lunch, user: invitee2)
+lunch.invite( user: invitee)
+lunch.invite( user: invitee2)
 lunch.create_topic(description: 'スペインの話、住んでいるところの話とか')
