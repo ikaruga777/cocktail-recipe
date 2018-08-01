@@ -15,40 +15,41 @@ ActiveRecord::Schema.define(version: 2018_07_31_060534) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "activities", force: :cascade do |t|
+  create_table "invitations", force: :cascade do |t|
     t.bigint "lunch_id"
-    t.string "place"
-    t.text "topic"
+    t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["lunch_id"], name: "index_activities_on_lunch_id"
-  end
-
-  create_table "guests", force: :cascade do |t|
-    t.bigint "lunch_id"
-    t.string "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["lunch_id"], name: "index_guests_on_lunch_id"
+    t.index ["lunch_id"], name: "index_invitations_on_lunch_id"
+    t.index ["user_id"], name: "index_invitations_on_user_id"
   end
 
   create_table "lunches", force: :cascade do |t|
     t.bigint "user_id"
+    t.string "place"
     t.date "scheduled_at"
+    t.integer "state"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_lunches_on_user_id"
   end
 
+  create_table "topics", force: :cascade do |t|
+    t.bigint "lunch_id"
+    t.text "description", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["lunch_id"], name: "index_topics_on_lunch_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "name"
-    t.string "email"
     t.boolean "admin", default: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  add_foreign_key "activities", "lunches"
-  add_foreign_key "guests", "lunches"
+  add_foreign_key "invitations", "lunches"
   add_foreign_key "lunches", "users"
+  add_foreign_key "topics", "lunches"
 end
