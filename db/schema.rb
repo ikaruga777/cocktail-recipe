@@ -28,7 +28,7 @@ ActiveRecord::Schema.define(version: 2018_07_31_060534) do
     t.bigint "user_id"
     t.string "place"
     t.date "scheduled_at"
-    t.integer "state"
+    t.integer "state", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_lunches_on_user_id"
@@ -43,8 +43,8 @@ ActiveRecord::Schema.define(version: 2018_07_31_060534) do
   end
 
   create_table "users", force: :cascade do |t|
-    t.string "name"
-    t.boolean "admin", default: false
+    t.string "name", null: false
+    t.boolean "admin", default: false, null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
