@@ -7,7 +7,7 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 user = User.create(name: 'amy', admin: true)
-lanch = user.lanches.create(scheduled_at: Date.new(2018,8,1))
-lanch.guests.create(name: 'tom')
-lanch.guests.create(name: 'george')
-lanch.create_activity(place: 'Asian Parm', topic: 'スペインの話、住んでいるところの話とか')
+lunch = user.lunches.create(scheduled_at: Date.new(2018,8,1))
+lunch.guests.create(name: 'tom')
+lunch.guests.create(name: 'george')
+lunch.create_activity(place: 'Asian Parm', topic: 'スペインの話、住んでいるところの話とか')

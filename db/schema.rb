@@ -16,28 +16,28 @@ ActiveRecord::Schema.define(version: 2018_07_31_060534) do
   enable_extension "plpgsql"
 
   create_table "activities", force: :cascade do |t|
-    t.bigint "lanch_id"
+    t.bigint "lunch_id"
     t.string "place"
     t.text "topic"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["lanch_id"], name: "index_activities_on_lanch_id"
+    t.index ["lunch_id"], name: "index_activities_on_lunch_id"
   end
 
   create_table "guests", force: :cascade do |t|
-    t.bigint "lanch_id"
+    t.bigint "lunch_id"
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["lanch_id"], name: "index_guests_on_lanch_id"
+    t.index ["lunch_id"], name: "index_guests_on_lunch_id"
   end
 
-  create_table "lanches", force: :cascade do |t|
+  create_table "lunches", force: :cascade do |t|
     t.bigint "user_id"
     t.date "scheduled_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["user_id"], name: "index_lanches_on_user_id"
+    t.index ["user_id"], name: "index_lunches_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -48,7 +48,7 @@ ActiveRecord::Schema.define(version: 2018_07_31_060534) do
     t.datetime "updated_at", null: false
   end
 
-  add_foreign_key "activities", "lanches"
-  add_foreign_key "guests", "lanches"
-  add_foreign_key "lanches", "users"
+  add_foreign_key "activities", "lunches"
+  add_foreign_key "guests", "lunches"
+  add_foreign_key "lunches", "users"
 end

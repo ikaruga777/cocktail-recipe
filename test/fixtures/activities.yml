@@ -1,11 +1,11 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  lanch: one
+  lunch: one
   place: MyString
   topic: MyText
 
 two:
-  lanch: two
+  lunch: two
   place: MyString
   topic: MyText

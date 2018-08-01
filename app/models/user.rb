@@ -1,3 +1,3 @@
 class User < ApplicationRecord
-  has_many :lanches, dependent: :destroy
+  has_many :lunches, dependent: :destroy
 end
