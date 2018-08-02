@@ -44,7 +44,7 @@ ActiveRecord::Schema.define(version: 2018_07_31_060534) do
 
   create_table "users", force: :cascade do |t|
     t.string "name", null: false
-    t.string "slack_id"
+    t.string "slack_identifier"
     t.boolean "admin", default: false, null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
