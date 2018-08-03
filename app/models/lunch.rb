@@ -5,7 +5,7 @@ class Lunch < ApplicationRecord
   has_many :invitees, through: :invitations, source: :user
   validates :state, presence: true
 
-  enum state: %i[scheduled done canceled]
+  enum state: {scheduled: 0, done: 1, canceled: 2}
 
   def invite(invitee)
     invitations.create(user: invitee)
