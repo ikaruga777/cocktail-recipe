@@ -27,7 +27,7 @@ ActiveRecord::Schema.define(version: 2018_07_31_060534) do
   create_table "lunches", force: :cascade do |t|
     t.bigint "user_id"
     t.string "place"
-    t.date "scheduled_at"
+    t.date "scheduled_for"
     t.integer "state", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

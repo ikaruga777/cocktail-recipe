@@ -8,7 +8,7 @@
 invitee = User.create!(name: 'tom', admin: true)
 user = User.create!(name: 'amy', admin: true)
 invitee2 = User.create!(name: 'george', admin: true)
-lunch = user.lunches.create!(scheduled_at: Date.new(2018, 8, 1),
+lunch = user.lunches.create!(scheduled_for: Date.new(2018, 8, 1),
                             place: 'Asian Parm',
 
                             state: :scheduled)
