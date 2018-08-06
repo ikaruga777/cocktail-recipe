@@ -1,0 +1,16 @@
+<div class="lunch">
+  <p><%= "作った人: #{@lunch.user.name}" %></p>
+  <p><%= "日付: #{@lunch.scheduled_for}" %></p>
+  <p>"いっしょに行く人"</p>
+  <% @lunch.invitees.each do |invitee| %>
+    <p><%= invitee.name %></p>
+  <% end %>
+  <% if @lunch.place.present? %>
+    <p><%= "場所: #{@lunch.place}" %></p>
+  <% end %>
+  <% if @lunch.topic.present? %>
+    <p>話したこと:</p>
+    <p><%= @lunch.topic.description.to_s %>
+  <% end %>
+  </div>
+</div>
