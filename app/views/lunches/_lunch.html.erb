@@ -1,6 +1,6 @@
 <li>
   <%= link_to "らんち", lunch %>
-  <%= lunch.scheduled_at %>
+  <%= lunch.scheduled_for %>
   <% lunch.invitees.each do |i| %>
     <p><%=i.name %></p>
   <% end %>
