@@ -7,10 +7,9 @@ class LunchesController < ApplicationController
   def show
     @lunch = Lunch.find_by(id: params[:id])
   end
-  
+
   def new
     @lunches = Lunch.new
   end
-
 
 end
