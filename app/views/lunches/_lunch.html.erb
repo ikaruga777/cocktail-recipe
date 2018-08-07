@@ -1,8 +1,8 @@
 <li>
   <p><%= lunch.scheduled_for %></p>
-  <p><%= link_to lunch.user.name, lunch.user %></p>
+  <p><%= lunch.user.name %></p>
   <% lunch.invitees.each do |invitee| %>
-    <p><%= link_to invitee.name, invitee %></p>
+    <p><%= invitee.name %></p>
   <% end %>
   <%= link_to "詳細", lunch %>
 </li>
