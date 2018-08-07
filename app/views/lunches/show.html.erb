@@ -1,7 +1,7 @@
 <div class="lunch">
-  <p><%= "作った人: #{@lunch.user.name}" %></p>
   <p><%= "日付: #{@lunch.scheduled_for}" %></p>
-  <p>"いっしょに行く人"</p>
+  <p>メンバー</p>
+  <p><%= @lunch.user.name %></p>
   <% @lunch.invitees.each do |invitee| %>
     <p><%= invitee.name %></p>
   <% end %>
