@@ -1,15 +1,17 @@
 <div class="lunch">
-  <p><%= "日付: #{@lunch.scheduled_for}" %></p>
+  <p>日付</p>
+  <p><%= @lunch.scheduled_for %></p>
   <p>メンバー</p>
   <p><%= @lunch.user.name %></p>
   <% @lunch.invitees.each do |invitee| %>
     <p><%= invitee.name %></p>
   <% end %>
   <% if @lunch.place.present? %>
-    <p><%= "場所: #{@lunch.place}" %></p>
+    <p>場所</p>
+    <p><%= @lunch.place %></p>
   <% end %>
   <% if @lunch.topic.present? %>
-    <p>話したこと:</p>
+    <p>話したこと</p>
     <p><%= @lunch.topic.description.to_s %>
   <% end %>
   </div>
