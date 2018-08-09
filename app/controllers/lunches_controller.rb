@@ -15,7 +15,6 @@ class LunchesController < ApplicationController
     @lunch = Lunch.new(lunch_params)
     user = User.find_by(name: params[:lunch][:user])
     @lunch.user = user
-    @lunch.state = :scheduled
     if @lunch.save
       redirect_to lunches_path
     else
