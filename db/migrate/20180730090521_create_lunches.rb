@@ -4,7 +4,7 @@ class CreateLunches < ActiveRecord::Migration[5.2]
       t.references :user, foreign_key: true
       t.string :place, null: true
       t.date :scheduled_for
-      t.integer :state, default: :scheduled, null: false
+      t.integer :state, default: Lunch.states[:scheduled], null: false
 
       t.timestamps
     end

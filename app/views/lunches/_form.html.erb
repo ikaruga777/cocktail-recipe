@@ -1,0 +1,15 @@
+<%= form_with model: lunch, local: true do |f| %>
+  <div>
+    <%= f.label "主催者" %>
+    <%= lunch.user.name %>
+  </div>
+  <div>
+    <%= f.label "予定日" %>
+    <%= f.date_field :scheduled_for %>
+  </div>
+  <div>
+    <%= f.label "場所" %>
+    <%= f.text_field :place %>
+  </div>
+  <%= f.submit "登録" %>
+<% end %>
