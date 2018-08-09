@@ -8,13 +8,13 @@ class LunchesController < ApplicationController
   end
 
   def new
-    @lunch = Lunch.new
+    @lunch = Lunch.new(scheduled_for: Date.today)
+    @lunch.user = User.first
   end
 
   def create
     @lunch = Lunch.new(lunch_params)
-    user = User.find_by(name: params[:lunch][:user])
-    @lunch.user = user
+    @lunch.user = User.first
     if @lunch.save
       redirect_to lunches_path
     else
@@ -25,6 +25,6 @@ class LunchesController < ApplicationController
   private
 
   def lunch_params
-    params.require(:lunch).permit(:name, :scheduled_for, :place)
+    params.require(:lunch).permit(:scheduled_for, :place)
   end
 end
