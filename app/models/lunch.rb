@@ -6,17 +6,10 @@ class Lunch < ApplicationRecord
   validates :state, presence: true
   validates :user_id, presence: true
   validates :scheduled_for, presence: true
-  after_initialize :set_default_state
 
   enum state: {scheduled: 0, done: 1, canceled: 2}
 
   def invite(invitee)
     invitations.create(user: invitee)
-  end
-
-  private
-
-  def set_default_state
-    self.state = :scheduled
   end
 end
