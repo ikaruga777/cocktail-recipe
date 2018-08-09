@@ -22,6 +22,11 @@ class LunchesController < ApplicationController
     end
   end
 
+  def destroy
+    Lunch.find(params[:id]).delete
+    redirect_to lunches_path
+  end
+
   private
 
   def lunch_params
