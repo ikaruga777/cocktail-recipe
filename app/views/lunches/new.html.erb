@@ -1,9 +1,15 @@
 <%= form_for :lunch, url: lunches_path do |f| %>
-  <%= f.label :user %>
-  <%= f.text_field :user %>
-  <%= f.label :scheduled_for %>
-  <%= f.date_field :scheduled_for %>
-  <%= f.label :place %>
-  <%= f.text_field :place %>
+  <div>
+    <%= f.label "主催者" %>
+    <%= f.text_field :user %>
+  </div>
+  <div>
+    <%= f.label "予定日" %>
+    <%= f.date_field :scheduled_for %>
+  </div>
+  <div>
+    <%= f.label "場所" %>
+    <%= f.text_field :place %>
+  </div>
   <%= f.submit "登録" %>
 <% end %>
