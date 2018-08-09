@@ -1,5 +1,4 @@
 class LunchesController < ApplicationController
-
   def index
     @lunches = Lunch.all
   end
