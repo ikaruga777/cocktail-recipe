@@ -23,7 +23,7 @@ class LunchesController < ApplicationController
   end
 
   def destroy
-    Lunch.find(params[:id]).delete
+    Lunch.find(params[:id]).destroy
     redirect_to lunches_path
   end
 
