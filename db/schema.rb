@@ -28,7 +28,7 @@ ActiveRecord::Schema.define(version: 2018_07_31_060534) do
     t.bigint "user_id"
     t.string "place"
     t.date "scheduled_for"
-    t.integer "state", null: false
+    t.integer "state", default: 0, null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_lunches_on_user_id"
