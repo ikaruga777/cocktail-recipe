@@ -12,10 +12,10 @@
   <% end %>
   <% if @lunch.topic.present? %>
     <p>話したこと</p>
-    <p><%= @lunch.topic.description.to_s %>
+    <p><%= @lunch.topic.description.to_s %></p>
   <% end %>
   <div>
     <%= link_to "予定を削除", @lunch, method: :delete,
-                                data: { confirm: "後悔しませんか？" } %>
+                                      data: { confirm: "後悔しませんか？" } %>
   </div>
 </div>
