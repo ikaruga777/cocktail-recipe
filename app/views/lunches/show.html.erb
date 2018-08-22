@@ -15,6 +15,9 @@
     <p><%= @lunch.topic.description %></p>
   <% end %>
   <div>
+    <%= link_to "予定を編集", edit_lunch_path %>
+  </div>
+  <div>
     <%= link_to "予定を削除", @lunch, method: :delete, data: { confirm: "後悔しませんか？" } %>
   </div>
 </div>
