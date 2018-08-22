@@ -1,4 +1,6 @@
 class LunchesController < ApplicationController
+  before_action :set_lunch, only: %i[edit update destroy]
+
   def index
     @lunches = Lunch.all
   end
@@ -22,12 +24,9 @@ class LunchesController < ApplicationController
     end
   end
 
-  def edit
-    @lunch = Lunch.find_by(id: params[:id])
-  end
+  def edit; end
 
   def update
-    @lunch = Lunch.find_by(id: params[:id])
     if @lunch.update_attributes(lunch_params)
       redirect_to @lunch
     else
@@ -36,11 +35,15 @@ class LunchesController < ApplicationController
   end
 
   def destroy
-    Lunch.find(params[:id]).destroy
+    @lunch.destroy
     redirect_to lunches_path
   end
 
   private
+
+  def set_lunch
+    @lunch = Lunch.find_by(id: params[:id])
+  end
 
   def lunch_params
     params.require(:lunch).permit(:scheduled_for, :place)
