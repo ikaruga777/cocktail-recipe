@@ -22,6 +22,19 @@ class LunchesController < ApplicationController
     end
   end
 
+  def edit
+    @lunch = Lunch.find_by(id: params[:id])
+  end
+
+  def update
+    @lunch = Lunch.find_by(id: params[:id])
+    if @lunch.update_attributes(lunch_params)
+      redirect_to @lunch
+    else
+      render 'edit'
+    end
+  end
+
   def destroy
     Lunch.find(params[:id]).destroy
     redirect_to lunches_path
