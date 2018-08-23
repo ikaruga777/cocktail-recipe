@@ -40,7 +40,7 @@ class LunchesController < ApplicationController
   private
 
   def set_lunch
-    @lunch = Lunch.find_by(id: params[:id])
+    @lunch = Lunch.find(params[:id])
   end
 
   def lunch_params
