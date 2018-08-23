@@ -1,13 +1,11 @@
 class LunchesController < ApplicationController
-  before_action :set_lunch, only: %i[edit update destroy]
+  before_action :set_lunch, only: %i[show edit update destroy]
 
   def index
     @lunches = Lunch.all
   end
 
-  def show
-    @lunch = Lunch.find_by(id: params[:id])
-  end
+  def show; end
 
   def new
     @lunch = Lunch.new(scheduled_for: Date.today)
