@@ -1,24 +1,18 @@
-# README
+# Cocktail Recipe
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## これはなに
+ペパボカクテル内で行われているランチの記録を楽にします。
 
-Things you may want to cover:
+## 素敵な機能
 
-* Ruby version
+- サクッとランチの予定を立てることができます
+- サクッとランチの記録をつけることができます
+- ランチの記録をMarkdownのTable記法で出力することができます(予定)
+- 認証はSlackで簡単に済ませることができます(予定)
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## 実行方法
+```
+$git clone
+$bundle install
+$rails s
+```
