@@ -4,7 +4,6 @@ class Lunch < ApplicationRecord
   has_many :invitations, dependent: :destroy
   has_many :invitees, through: :invitations, source: :user
   validates :state, presence: true
-  validates :user_id, presence: true
   validates :scheduled_for, presence: true
 
   enum state: {scheduled: 0, done: 1, canceled: 2}
