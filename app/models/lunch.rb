@@ -1,5 +1,4 @@
 class Lunch < ApplicationRecord
-  belongs_to :user
   has_one :topic, dependent: :destroy
   has_many :attendances, dependent: :destroy
   has_many :attendees, through: :attendances, source: :user
