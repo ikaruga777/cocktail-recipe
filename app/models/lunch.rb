@@ -7,7 +7,7 @@ class Lunch < ApplicationRecord
 
   enum state: {scheduled: 0, done: 1, canceled: 2}
 
-  def invite(invitee)
-    attendances.create(user: invitee)
+  def attend(attendee)
+    attendances.create(user: attendee)
   end
 end
