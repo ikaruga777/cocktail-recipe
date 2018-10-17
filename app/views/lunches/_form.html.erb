@@ -1,7 +1,9 @@
 <%= form_with model: lunch, local: true do |f| %>
   <div>
-    <%= f.label "主催者" %>
-    <%= lunch.user.name %>
+    <%= f.label "参加者" %>
+    <% lunch.attendees.each do |attendee| %>
+      <%= attendee.name %>
+    <% end %>
   </div>
   <div>
     <%= f.label "予定日" %>
