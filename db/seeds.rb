@@ -7,20 +7,20 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 user = User.create(name: 'amy', admin: true)
-invitee = User.create!(name: 'tom')
-invitee2 = User.create!(name: 'george')
+attendee = User.create!(name: 'tom')
+attendee2 = User.create!(name: 'george')
 lunch = user.lunches.create(scheduled_for: Date.new(2018, 8, 1),
                             place: 'Asian Parm',
                             state: :scheduled)
-lunch.invite(invitee)
-lunch.invite(invitee2)
+lunch.attend(attendee)
+lunch.attend(attendee2)
 
 user = User.create(name: 'basil', admin: true)
-invitee = User.create!(name: 'baiken')
-invitee2 = User.create!(name: 'may')
+attendee = User.create!(name: 'baiken')
+attendee2 = User.create!(name: 'may')
 lunch = user.lunches.create(scheduled_for: Date.new(2018, 8, 2),
                             place: '和泉鮨🍣',
                             state: :done)
-lunch.invite(invitee)
-lunch.invite(invitee2)
+lunch.attend(attendee)
+lunch.attend(attendee2)
 lunch.create_topic(description: 'スペインの話、住んでいるところの話とか')
