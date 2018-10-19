@@ -9,12 +9,10 @@ class LunchesController < ApplicationController
 
   def new
     @lunch = Lunch.new(scheduled_for: Date.today)
-    @lunch.user = current_user
   end
 
   def create
     @lunch = Lunch.new(lunch_params)
-    @lunch.user = current_user
     if @lunch.save
       redirect_to lunches_path
     else

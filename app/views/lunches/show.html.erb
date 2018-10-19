@@ -2,9 +2,8 @@
   <p>日付</p>
   <p><%= @lunch.scheduled_for %></p>
   <p>メンバー</p>
-  <p><%= @lunch.user.name %></p>
-  <% @lunch.invitees.each do |invitee| %>
-    <p><%= invitee.name %></p>
+  <% @lunch.attendees.each do |attendee| %>
+    <p><%= attendee.name %></p>
   <% end %>
   <% if @lunch.place.present? %>
     <p>場所</p>
