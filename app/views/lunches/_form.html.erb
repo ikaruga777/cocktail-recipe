@@ -4,6 +4,7 @@
     <% lunch.attendees.each do |attendee| %>
       <%= attendee.name %>
     <% end %>
+    <%= f.collection_check_boxes :user_ids, User.all, :id, :name %>
   </div>
   <div>
     <%= f.label "予定日" %>
